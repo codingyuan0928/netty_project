@@ -24,7 +24,7 @@ Spring Boot + Netty 練習專案，模擬 TCP 訊息收發、十六進位電文�
 
 Jenkins：建置 Maven 專案、執行單元測試
 
-OpenShift：自動化部署 Netty Server 與 Spring Boot Service
+OpenShift：部署 Netty Server 與 Spring Boot Service
 
 ## 📌 測試方式
 
