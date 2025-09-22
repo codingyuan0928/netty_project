@@ -1,0 +1,157 @@
+2025-03-05 15:00:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.nettyserver.NettyServerApplicationTests], using SpringBootContextLoader
+2025-03-05 15:00:44 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.nettyserver.NettyServerApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-03-05 15:00:44 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.nettyserver.NettyServerApplicationTests]: NettyServerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05 15:00:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.NettyServerApplication for test class com.example.nettyserver.NettyServerApplicationTests
+2025-03-05 15:00:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-03-05 15:00:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@45e37a7e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@62452cc9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6941827a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5a7005d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5bc9ba1d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1021f6c9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7516e4e5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@488eb7f2, org.springframework.test.context.event.EventPublishingTestExecutionListener@5e81e5ac, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4189d70b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3fa2213, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3e7634b9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6f0b0a5e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6035b93b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@320de594]
+2025-03-05 15:00:44 [main] INFO  c.e.n.NettyServerApplicationTests - Starting NettyServerApplicationTests using Java 17.0.14 on bt-nb-2204 with PID 1520 (started by leon.chang in C:\netty_server)
+2025-03-05 15:00:44 [main] INFO  c.e.n.NettyServerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-05 15:00:47 [main] INFO  c.e.n.NettyServerApplicationTests - Started NettyServerApplicationTests in 2.976 seconds (JVM running for 4.266)
+2025-03-05 15:02:47 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.nettyserver.NettyServerApplicationTests], using SpringBootContextLoader
+2025-03-05 15:02:47 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.nettyserver.NettyServerApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-03-05 15:02:47 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.nettyserver.NettyServerApplicationTests]: NettyServerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05 15:02:47 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.NettyServerApplication for test class com.example.nettyserver.NettyServerApplicationTests
+2025-03-05 15:02:47 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-03-05 15:02:47 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@75b25825, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@18025ced, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@13cf7d52, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3a3e4aff, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5d2a4eed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@57459491, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3f0846c6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@77a98a6a, org.springframework.test.context.event.EventPublishingTestExecutionListener@78fbff54, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3e10dc6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7e22550a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@45e37a7e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@62452cc9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6941827a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5a7005d]
+2025-03-05 15:02:48 [main] INFO  c.e.n.NettyServerApplicationTests - Starting NettyServerApplicationTests using Java 17.0.14 on bt-nb-2204 with PID 12368 (started by leon.chang in C:\netty_server)
+2025-03-05 15:02:48 [main] INFO  c.e.n.NettyServerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-05 15:02:50 [main] INFO  c.e.n.NettyServerApplicationTests - Started NettyServerApplicationTests in 3.066 seconds (JVM running for 4.345)
+2025-03-05 16:20:14 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.nettyserver.NettyServerApplicationTests], using SpringBootContextLoader
+2025-03-05 16:20:14 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.nettyserver.NettyServerApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-03-05 16:20:14 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.nettyserver.NettyServerApplicationTests]: NettyServerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05 16:20:14 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.NettyServerApplication for test class com.example.nettyserver.NettyServerApplicationTests
+2025-03-05 16:20:15 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-03-05 16:20:15 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@13cf7d52, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a3e4aff, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5d2a4eed, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@57459491, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3f0846c6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77a98a6a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@78fbff54, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3e10dc6, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e22550a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@45e37a7e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@62452cc9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6941827a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a7005d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5bc9ba1d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1021f6c9]
+2025-03-05 16:20:15 [main] INFO  c.e.n.NettyServerApplicationTests - Starting NettyServerApplicationTests using Java 17.0.14 on bt-nb-2204 with PID 16060 (started by leon.chang in C:\netty_server)
+2025-03-05 16:20:15 [main] INFO  c.e.n.NettyServerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-05 16:20:19 [main] INFO  c.e.n.NettyServerApplicationTests - Started NettyServerApplicationTests in 3.886 seconds (JVM running for 5.606)
+2025-03-05 20:30:01 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.14 on bt-nb-2204 with PID 8340 (C:\netty_server\target\classes started by leon.chang in C:\netty_server)
+2025-03-05 20:30:01 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-05 20:30:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-03-05 20:30:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-03-05 20:30:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-05 20:30:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-03-05 20:30:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-05 20:30:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2006 ms
+2025-03-05 20:30:04 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nettyServer': Invocation of init method failed; nested exception is java.net.BindException: Address already in use: bind
+2025-03-05 20:30:04 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-03-05 20:30:04 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-03-05 20:30:04 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nettyServer': Invocation of init method failed; nested exception is java.net.BindException: Address already in use: bind
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.NettyServerApplication.main(NettyServerApplication.java:10)
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:506)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:491)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-05 20:30:21 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.14 on bt-nb-2204 with PID 19420 (C:\netty_server\target\classes started by leon.chang in C:\netty_server)
+2025-03-05 20:30:21 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-05 20:30:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-03-05 20:30:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-03-05 20:30:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-05 20:30:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-03-05 20:30:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-05 20:30:22 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1264 ms
+2025-03-05 20:30:23 [main] INFO  com.example.nettyserver.NettyServer - Netty server started on port: 9090
+2025-03-05 20:30:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-03-05 20:30:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-03-05 20:30:23 [main] INFO  com.example.NettyServerApplication - Started NettyServerApplication in 2.352 seconds (JVM running for 2.861)
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE891A1E89084
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] POST 成功, ID: 553
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYID229
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYID
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYID - 解析成功, ID: 553
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 GET 請求, ID: 553
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] GET 成功, ID: 553, 名稱: 葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] GET 結果轉換 HEX: 7B226964223A3535332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYFRUIT7B226964223A3535332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYFRUIT
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYFRUIT - 解析成功, ID: 553, 名稱: 更新後的葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 PUT 請求, ID: 553, 名稱: 更新後的葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] PUT 成功, ID: 553, 名稱: 更新後的葡萄
+2025-03-05 20:30:52 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] PUT 結果轉換 HEX: 7B226964223A3535332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:30:52 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello Netty
+2025-03-05 20:30:52 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:30:52 [nioEventLoopGroup-3-2] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello Netty
+2025-03-05 20:32:55 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE891A1E89084
+2025-03-05 20:32:55 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:32:55 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 葡萄
+2025-03-05 20:32:55 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 葡萄
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] POST 成功, ID: 557
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYID22D
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYID
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYID - 解析成功, ID: 557
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 GET 請求, ID: 557
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] GET 成功, ID: 557, 名稱: 葡萄
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] GET 結果轉換 HEX: 7B226964223A3535372C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYFRUIT7B226964223A3535372C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYFRUIT
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYFRUIT - 解析成功, ID: 557, 名稱: 更新後的葡萄
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 PUT 請求, ID: 557, 名稱: 更新後的葡萄
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] PUT 成功, ID: 557, 名稱: 更新後的葡萄
+2025-03-05 20:32:56 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] PUT 結果轉換 HEX: 7B226964223A3535372C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:32:56 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello Netty
+2025-03-05 20:32:56 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:32:56 [nioEventLoopGroup-3-4] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello Netty
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE891A1E89084
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] POST 成功, ID: 558
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYID22E
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYID
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYID - 解析成功, ID: 558
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 GET 請求, ID: 558
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] GET 成功, ID: 558, 名稱: 葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] GET 結果轉換 HEX: 7B226964223A3535382C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYFRUIT7B226964223A3535382C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYFRUIT
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYFRUIT - 解析成功, ID: 558, 名稱: 更新後的葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 PUT 請求, ID: 558, 名稱: 更新後的葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] PUT 成功, ID: 558, 名稱: 更新後的葡萄
+2025-03-05 20:39:16 [nioEventLoopGroup-3-5] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] PUT 結果轉換 HEX: 7B226964223A3535382C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-05 20:39:16 [nioEventLoopGroup-3-6] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello Netty
+2025-03-05 20:39:16 [nioEventLoopGroup-3-6] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-05 20:39:16 [nioEventLoopGroup-3-6] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello Netty

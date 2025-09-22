@@ -1,0 +1,130 @@
+2025-09-21 18:49:03 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.6 on leonlaptop with PID 9652 (D:\netty cicd\netty_server\target\classes started by godkn in D:\netty cicd\netty_server)
+2025-09-21 18:49:03 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-21 18:49:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-09-21 18:49:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-09-21 18:49:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-21 18:49:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-09-21 18:49:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-21 18:49:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1018 ms
+2025-09-21 18:49:04 [main] INFO  com.example.nettyserver.NettyServer - Netty server started on port: 9090
+2025-09-21 18:49:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-09-21 18:49:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-09-21 18:49:05 [main] INFO  com.example.NettyServerApplication - Started NettyServerApplication in 1.898 seconds (JVM running for 14.514)
+2025-09-21 19:16:11 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: Hello World
+2025-09-21 19:16:11 [nioEventLoopGroup-3-1] WARN  c.e.nettyserver.NettyServerHandler - [Netty] 無效指令: Hello World
+2025-09-21 19:18:05 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello World
+2025-09-21 19:18:05 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-09-21 19:18:05 [nioEventLoopGroup-3-2] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello World
+2025-09-21 19:21:02 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello World
+2025-09-21 19:21:02 [nioEventLoopGroup-3-3] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-09-21 19:21:02 [nioEventLoopGroup-3-3] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello World
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE8A5BFE7939C
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 西瓜
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 西瓜
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-09-21 19:23:11 [nioEventLoopGroup-3-4] ERROR c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] POST 請求失敗
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2025-09-21T11:23:11.866+00:00","status":500,"error":"Internal Server Error","path":"/api/fruits"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:100)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:122)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:819)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:631)
+	at com.example.nettyserver.NettyServerHandler.sendPostRequest(NettyServerHandler.java:151)
+	at com.example.nettyserver.NettyServerHandler.handlePassby(NettyServerHandler.java:119)
+	at com.example.nettyserver.NettyServerHandler.channelRead(NettyServerHandler.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-09-21 19:24:16 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.6 on leonlaptop with PID 22496 (D:\netty cicd\netty_server\target\classes started by godkn in D:\netty cicd\netty_server)
+2025-09-21 19:24:16 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-21 19:24:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-09-21 19:24:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-09-21 19:24:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-21 19:24:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-09-21 19:24:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-21 19:24:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 857 ms
+2025-09-21 19:24:17 [main] INFO  com.example.nettyserver.NettyServer - Netty server started on port: 9090
+2025-09-21 19:24:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-09-21 19:24:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-09-21 19:24:17 [main] INFO  com.example.NettyServerApplication - Started NettyServerApplication in 1.664 seconds (JVM running for 1.994)
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE8A5BFE7939C
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 西瓜
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 西瓜
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-09-21 19:24:23 [nioEventLoopGroup-3-1] ERROR c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] POST 請求失敗
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : "{"timestamp":"2025-09-21T11:24:23.499+00:00","status":500,"error":"Internal Server Error","path":"/api/fruits"}"
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:100)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:122)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:819)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:631)
+	at com.example.nettyserver.NettyServerHandler.sendPostRequest(NettyServerHandler.java:151)
+	at com.example.nettyserver.NettyServerHandler.handlePassby(NettyServerHandler.java:119)
+	at com.example.nettyserver.NettyServerHandler.channelRead(NettyServerHandler.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-09-21 19:27:11 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.6 on leonlaptop with PID 26208 (D:\netty cicd\netty_server\target\classes started by godkn in D:\netty cicd\netty_server)
+2025-09-21 19:27:11 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-21 19:27:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-09-21 19:27:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-09-21 19:27:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-21 19:27:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-09-21 19:27:12 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-21 19:27:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 918 ms
+2025-09-21 19:27:12 [main] INFO  com.example.nettyserver.NettyServer - Netty server started on port: 9090
+2025-09-21 19:27:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-09-21 19:27:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-09-21 19:27:13 [main] INFO  com.example.NettyServerApplication - Started NettyServerApplication in 1.738 seconds (JVM running for 2.089)
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE8A5BFE7939C
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] POST 成功, ID: 1
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYID01
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYID
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYID - 解析成功, ID: 1
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 GET 請求, ID: 1
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] GET 成功, ID: 1, 名稱: 西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] GET 結果轉換 HEX: 7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYFRUIT7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYFRUIT
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYFRUIT - 解析成功, ID: 1, 名稱: 更新後的西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 PUT 請求, ID: 1, 名稱: 更新後的西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] PUT 成功, ID: 1, 名稱: 更新後的西瓜
+2025-09-21 19:27:18 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] PUT 結果轉換 HEX: 7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D

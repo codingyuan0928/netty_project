@@ -1,0 +1,32 @@
+2025-09-22 11:00:45 [main] INFO  com.example.NettyPracticeApplication - Starting NettyPracticeApplication using Java 17.0.6 on leonlaptop with PID 7408 (D:\netty_project\netty_practice\target\classes started by godkn in D:\netty_project\netty_practice)
+2025-09-22 11:00:45 [main] INFO  com.example.NettyPracticeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-22 11:00:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22 11:00:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-09-22 11:00:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2025-09-22 11:00:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-09-22 11:00:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-22 11:00:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-09-22 11:00:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-22 11:00:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1451 ms
+2025-09-22 11:00:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22 11:00:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+2025-09-22 11:00:47 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-09-22 11:00:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-22 11:00:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-22 11:00:48 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-09-22 11:00:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-09-22 11:00:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22 11:00:48 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22 11:00:49 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-09-22 11:00:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-09-22 11:00:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2025-09-22 11:00:49 [main] INFO  com.example.NettyPracticeApplication - Started NettyPracticeApplication in 3.91 seconds (JVM running for 17.74)
+2025-09-22 11:01:13 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22 11:01:13 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-22 11:01:13 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Client → Netty] 發送請求: PASSBYE8A5BFE7939C
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Netty → Client] 收到伺服器回應: PASSBYID01
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Client → Netty] 發送 ID 查詢請求: PASSBYID01
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Netty → Client] 收到伺服器回應: PASSBYFRUIT7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Client → Netty] 更新水果資料: PASSBYFRUIT7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D
+2025-09-22 11:01:13 [nioEventLoopGroup-2-1] INFO  com.example.netty.NettyClientHandler - [Netty → Client] 收到伺服器回應: END7B226964223A312C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E8A5BFE7939C227D

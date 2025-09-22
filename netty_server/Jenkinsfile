@@ -1,0 +1,160 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'local maven'
+    }
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+
+    environment {
+        SONAR_HOST_URL="http://localhost:9000/"
+        SONAR_PROJECT_KEY="nettyserver"
+        SONAR_PROJECT_NAME="\'nettyserver\'"
+
+        //版本號
+        IMAGE_VERSION="${BUILD_NUMBER}"
+        DOCKER_IMAGE="godknows123456/netty-server:${BUILD_NUMBER}"
+        DOCKER_REPO="godknows123456/netty-server"
+
+        OCP_SERVER="https://api.public-01.bttech.ocp:6443"
+        OCP_PROJECT="netty-project"
+    }
+
+
+    stages {
+        
+        stage('Build') {
+            steps {
+                bat 'mvn clean package'
+            }
+            post {
+                success {
+                    echo '開始存檔...'
+                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                }
+            }
+        }
+
+        stage('SonarQube Scanning') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
+                        bat ''' 
+                        mvn sonar:sonar ^
+                        -Dsonar.projectKey=%SONAR_PROJECT_KEY% ^
+                        -Dsonar.host.url=%SONAR_HOST_URL% ^
+                        -Dsonar.token=%SONAR_TOKEN%
+                        '''
+                    }
+                }       
+            }       
+        }
+
+        stage('Quality Gate') {
+            steps {
+                withCredentials([string(credentialsId: 'SONAR_USER_TOKEN', variable: 'SONAR_USER_TOKEN')]) {
+                    script {
+                        def qgStatus = ""
+                        timeout(time: 5, unit: 'MINUTES') {
+                            waitUntil {
+                                sleep(time: 5, unit: 'SECONDS')
+                                bat(script: """
+                                    curl -s -u %SONAR_USER_TOKEN%: http://localhost:9000/api/qualitygates/project_status?projectKey=nettyserver > qg_result.json
+                                """)
+                                def response = readFile('qg_result.json').trim()
+                                
+                                echo "SonarQube Quality Gate Response: ${response}"
+                                def json = readJSON(text: response)
+                                qgStatus = json.projectStatus.status
+                                return (qgStatus == "OK" || qgStatus == "ERROR")
+                            }
+                        }
+                        if (qgStatus != "OK") {
+                            // error "❌ SonarQube Quality Gate 未通過: ${qgStatus}"
+                        } else {
+                            echo "✅ SonarQube Quality Gate 通過！"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Docker Build & Deploy Test') {
+            steps {
+                script {
+                    echo "🔄 Stopping existing container..."
+                    bat '''
+                    docker ps -a --format "{{.Names}}" | findstr "netty-server-container" > nul && docker stop netty-server-container || echo "No running container to stop."
+                    docker ps -a --format "{{.Names}}" | findstr "netty-server-container" > nul && docker rm netty-server-container || echo "No container to remove."
+                    exit 0
+                    '''
+
+                    echo "🐳 Building Docker image..."
+                    bat '''
+                    docker build -t %DOCKER_IMAGE% -f Dockerfile .
+                    exit 0
+                    '''
+
+                    echo "🚀 Running Docker container..."
+                    bat '''
+                    docker run -d --network netty-network --name netty-server-container -p 8090:8090 -p 9090:9090 %DOCKER_IMAGE%
+                    exit 0
+                    '''
+                }
+            }
+        }
+
+        stage('Manual Approval Before Push') {
+            steps {
+                script {
+                    input message: "是否推送到Dockerhub?", ok:"確認"
+                }
+            }
+        }
+
+        stage('Push to Dockerhub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    bat """
+                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                    docker push %DOCKER_IMAGE%
+                    docker logout
+                    """
+                }
+            }
+        }
+
+
+        stage('Manual Approval Before Deploy') {
+            steps {
+                script {
+                    input message: "是否確認部署到 OpenShift？", ok: "確認"
+                }
+            }
+        }
+
+
+        stage('Deploy to OpenShift') {
+            steps {
+                echo "🚀 SSH 進 bastion 機並執行 OpenShift 命令"
+                withCredentials([
+                    sshUserPrivateKey(credentialsId: 'BASTION_SSH', keyFileVariable: 'SSH_KEY'),
+                    string(credentialsId: 'OCP_TOKEN', variable: 'OCP_TOKEN')
+                ]) {
+                    bat """
+                        chcp 65001 > nul
+                        icacls %SSH_KEY% /inheritance:r
+                        icacls %SSH_KEY% /grant:r %USERNAME%:F
+                        icacls %SSH_KEY% /remove BUILTIN\\Users
+                        ssh -o StrictHostKeyChecking=no -i %SSH_KEY% leon@192.168.65.50 ^
+                        "export OCP_TOKEN='%OCP_TOKEN%' && source ~/.bashrc && oc login --token='%OCP_TOKEN%' --server='%OCP_SERVER%' && oc project %OCP_PROJECT%"
+                        """
+                }
+            }
+        }
+
+    }
+}

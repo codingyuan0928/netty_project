@@ -1,0 +1,33 @@
+2025-03-06 11:13:41 [main] INFO  com.example.NettyServerApplication - Starting NettyServerApplication using Java 17.0.14 on bt-nb-2204 with PID 3280 (C:\netty_server\target\classes started by leon.chang in C:\netty_server)
+2025-03-06 11:13:41 [main] INFO  com.example.NettyServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-06 11:13:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-03-06 11:13:43 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-03-06 11:13:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 11:13:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-03-06 11:13:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 11:13:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1606 ms
+2025-03-06 11:13:43 [main] INFO  com.example.nettyserver.NettyServer - Netty server started on port: 9090
+2025-03-06 11:13:44 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-03-06 11:13:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-03-06 11:13:44 [main] INFO  com.example.NettyServerApplication - Started NettyServerApplication in 2.866 seconds (JVM running for 12.268)
+2025-03-06 11:14:54 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYE891A1E89084
+2025-03-06 11:14:54 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-06 11:14:54 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 解析成功, 輸入: 葡萄
+2025-03-06 11:14:54 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 POST 請求, 名稱: 葡萄
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - 送得路徑:localhost
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] POST 成功, ID: 573
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYID23D
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYID
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYID - 解析成功, ID: 573
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 GET 請求, ID: 573
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] GET 成功, ID: 573, 名稱: 葡萄
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] GET 結果轉換 HEX: 7B226964223A3537332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYFRUIT7B226964223A3537332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBYFRUIT
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty] PASSBYFRUIT - 解析成功, ID: 573, 名稱: 更新後的葡萄
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → Spring Boot] 發送 PUT 請求, ID: 573, 名稱: 更新後的葡萄
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Spring Boot → Netty] PUT 成功, ID: 573, 名稱: 更新後的葡萄
+2025-03-06 11:14:55 [nioEventLoopGroup-3-1] INFO  c.e.nettyserver.NettyServerHandler - [Netty → TCP Client] PUT 結果轉換 HEX: 7B226964223A3537332C2266727569744E616D65223A22E69BB4E696B0E5BE8CE79A84E891A1E89084227D
+2025-03-06 11:14:55 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 收到 TCP 請求: PASSBYHello Netty
+2025-03-06 11:14:55 [nioEventLoopGroup-3-2] INFO  c.e.nettyserver.NettyServerHandler - [Netty] 處理指令: PASSBY
+2025-03-06 11:14:55 [nioEventLoopGroup-3-2] WARN  c.e.nettyserver.NettyServerHandler - [Netty] PASSBY - 非 16 進制: Hello Netty

@@ -1,0 +1,166 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'local maven'
+    }
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+
+    environment {
+        SONAR_HOST_URL="http://localhost:9000/"
+        SONAR_PROJECT_KEY="nettypractice"
+        SONAR_PROJECT_NAME="\'nettypractice\'"
+        //版本號
+        IMAGE_VERSION="${BUILD_NUMBER}"
+        DOCKER_IMAGE="godknows123456/netty-practice:${BUILD_NUMBER}"
+        DOCKER_REPO="godknows123456/netty-practice"
+
+        OCP_SERVER="https://api.public-01.bttech.ocp:6443"
+        OCP_PROJECT="netty-project"
+    }
+
+    stages {
+        stage('Test'){
+            steps{
+                echo 'Starting netty server for Testing...'
+                bat 'start /b java -jar "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\netty_server\\target\\netty_server-0.0.3-SNAPSHOT.jar"'
+                sleep time:5,unit:'SECONDS'
+                echo 'Running maven Test'
+                bat 'mvn test jacoco:report'
+                echo 'Shutdown netty server...'
+                bat '''
+                @echo off
+                for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8083') do (
+                    if not "%%a"=="0" (
+                        echo Killing process with PID %%a
+                        taskkill /F /PID %%a
+                    )
+                )
+                '''
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'mvn clean package -DskipTests'
+            }
+            post {
+                success {
+                    echo '開始存檔...'
+                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                }
+            }
+        }
+
+         stage('SonarQube Scanning') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    withCredentials([string(credentialsId: 'SONAR_TOKEN_PRACTICE', variable: 'SONAR_TOKEN_PRACTICE')]) {
+                        bat ''' 
+                        mvn sonar:sonar ^
+                        -Dsonar.projectKey=%SONAR_PROJECT_KEY% ^
+                        -Dsonar.host.url=%SONAR_HOST_URL% ^
+                        -Dsonar.token=%SONAR_TOKEN_PRACTICE% ^
+                        -Dsonar.coverage.jacoco.xmlReportPaths=C:/Java_workspace/netty_practice/target/site/jacoco/jacoco.xml
+                        '''
+                    }
+                }       
+            }       
+        }
+
+        stage('Quality Gate') {
+            steps {
+                withCredentials([string(credentialsId: 'SONAR_USER_TOKEN', variable: 'SONAR_USER_TOKEN')]) {
+                    script {
+                        def qgStatus = ""
+                        timeout(time: 5, unit: 'MINUTES') {
+                            waitUntil {
+                                sleep(time: 5, unit: 'SECONDS')
+                                bat(script: """
+                                    curl -s -u %SONAR_USER_TOKEN%: http://localhost:9000/api/qualitygates/project_status?projectKey=nettypractice > qg_result.json
+                                """)
+                                def response = readFile('qg_result.json').trim()
+                                
+                                echo "SonarQube Quality Gate Response: ${response}"
+                                def json = readJSON(text: response)
+                                qgStatus = json.projectStatus.status
+                                return (qgStatus == "OK" || qgStatus == "ERROR")
+                            }
+                        }
+                        if (qgStatus != "OK") {
+                            // error "❌ SonarQube Quality Gate 未通過: ${qgStatus}"
+                        } else {
+                            echo "✅ SonarQube Quality Gate 通過！"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Docker Build & Deploy') {
+            steps {
+                script {
+                    echo "🔄 Stopping existing container..."
+                    bat '''
+                    docker ps -a --format "{{.Names}}" | findstr "netty-practice-container" > nul && docker stop netty-practice-container || echo "No running container to stop."
+                    docker ps -a --format "{{.Names}}" | findstr "netty-practice-container" > nul && docker rm netty-practice-container || echo "No container to remove."
+                    exit 0
+                    '''
+
+                    echo "🐳 Building Docker image..."
+                    bat '''
+                    docker build -t %DOCKER_IMAGE% -f Dockerfile .
+                    exit 0
+                    '''
+
+                    echo "🚀 Running Docker container..."
+                    bat '''
+                    docker run -d --network netty-network --name netty-practice-container -p 8083:8083 netty-practice-image
+                    exit 0
+                    '''
+                }
+            }
+        }
+
+        stage('Manual Approval Before Push') {
+            steps {
+                script {
+                    input message: "是否推送到Dockerhub?", ok:"確認"
+                }
+            }
+        }
+
+        stage('Push to Dockerhub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    bat """
+                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                    docker push %DOCKER_IMAGE%
+                    docker logout
+                    """
+                }
+            }
+        }
+
+         stage('Deploy to OpenShift') {
+            steps {
+                echo "🚀 SSH 進 bastion 機並執行 OpenShift 命令"
+                withCredentials([
+                    sshUserPrivateKey(credentialsId: 'BASTION_SSH', keyFileVariable: 'SSH_KEY'),
+                    string(credentialsId: 'OCP_TOKEN', variable: 'OCP_TOKEN')
+                ]) {
+                    bat """
+                        chcp 65001 > nul
+                        icacls %SSH_KEY% /inheritance:r
+                        icacls %SSH_KEY% /grant:r %USERNAME%:F
+                        icacls %SSH_KEY% /remove BUILTIN\\Users
+                        ssh -o StrictHostKeyChecking=no -i %SSH_KEY% leon@192.168.65.50 ^
+                        "export OCP_TOKEN='%OCP_TOKEN%' && source ~/.bashrc && oc login --token='%OCP_TOKEN%' --server='%OCP_SERVER%' && oc project %OCP_PROJECT%"
+                        """
+                }
+            }
+        }
+    }
+}
